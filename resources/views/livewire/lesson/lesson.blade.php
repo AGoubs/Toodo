@@ -31,7 +31,13 @@
   <div class="card">
     <!-- Card header -->
     <div class="card-header" style="padding-bottom: 0 !important">
-      <h5 class="mb-0">Liste des cours</h5>
+      <div class="d-flex flex-row justify-content-between">
+        <div>
+          <h5 class="mb-0">Liste des cours</h5>
+        </div>
+        <a href="https://soft-ui-dashboard-pro-laravel.creative-tim.com/laravel-new-role"
+          class="btn bg-gradient-dark btn-sm mb-0" type="button">+&nbsp; Ajouter</a>
+      </div>
       <p class="text-sm mb-0">
         {{ $course->name }}
       </p>
