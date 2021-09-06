@@ -26,6 +26,6 @@ class DatabaseSeeder extends Seeder
     ]);
     Professor::factory(5)->create();
     Course::factory(5)->create();
-    Lesson::factory(15)->create();
+    Lesson::factory(100)->create();
   }
 }
