@@ -6,29 +6,30 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateProfessorsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('professors', function (Blueprint $table) {
-            $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->foreignId('course_id')->constrained();
-            $table->timestamps();
-        });
-    }
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    Schema::create('professors', function (Blueprint $table) {
+      $table->id();
+      $table->string('firstname');
+      $table->string('lastname');
+      $table->string('photo');
+      $table->foreignId('course_id')->constrained();
+      $table->timestamps();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('professors');
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::dropIfExists('professors');
+  }
 }

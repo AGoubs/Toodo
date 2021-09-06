@@ -16,7 +16,7 @@ use App\Http\Livewire\Rtl;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
-
+use App\Http\Livewire\Lesson\Lesson;
 use Illuminate\Http\Request;
 
 /*
@@ -36,17 +36,17 @@ Route::get('/sign-up', SignUp::class)->name('sign-up');
 Route::get('/login', Login::class)->name('login');
 
 Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-password');
- 
-Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')->middleware('signed');
+
+Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')->middleware('signed');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', Dashboard::class)->name('dashboard');
-    Route::get('/billing', Billing::class)->name('billing');
-    Route::get('/profile', Profile::class)->name('profile');
-    Route::get('/tables', Tables::class)->name('tables');
-    Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
-    Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
-    Route::get('/rtl', Rtl::class)->name('rtl');
-    Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
+  Route::get('/dashboard', Dashboard::class)->name('dashboard');
+  Route::get('/lesson/{courseId}', Lesson::class)->name('lesson.view');
+  Route::get('/billing', Billing::class)->name('billing');
+  Route::get('/profile', Profile::class)->name('profile');
+  Route::get('/tables', Tables::class)->name('tables');
+  Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
+  Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
+  Route::get('/rtl', Rtl::class)->name('rtl');
+  Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
 });
-
