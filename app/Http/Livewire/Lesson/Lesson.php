@@ -13,13 +13,13 @@ class Lesson extends Component
   public $course;
   public $lessons;
   public $courseId;
+  protected $queryString = ['courseId'];
 
   public function render()
   {
     $this->course = Course::where('id', $this->courseId)->first();
     $this->lessons = LessonModel::where('course_id', $this->courseId)->get();
     $this->professor = Professor::where('id', $this->course->professor_id)->first();
-    // dd($this->lessons);
     return view('livewire.lesson.lesson');
   }
 

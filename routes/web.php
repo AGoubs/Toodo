@@ -14,10 +14,9 @@ use App\Http\Livewire\StaticSignIn;
 use App\Http\Livewire\StaticSignUp;
 use App\Http\Livewire\Rtl;
 
-use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+use App\Http\Livewire\Lesson\Create;
 use App\Http\Livewire\Lesson\Lesson;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +40,8 @@ Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')
 
 Route::middleware('auth')->group(function () {
   Route::get('/dashboard', Dashboard::class)->name('dashboard');
-  Route::get('/lesson/{courseId}', Lesson::class)->name('lesson.view');
+  Route::get('/lesson/view', Lesson::class)->name('lesson.view');
+  Route::get('/lesson/create', Create::class)->name('lesson.create');
   Route::get('/billing', Billing::class)->name('billing');
   Route::get('/profile', Profile::class)->name('profile');
   Route::get('/tables', Tables::class)->name('tables');

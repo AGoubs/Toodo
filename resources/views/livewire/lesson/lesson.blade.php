@@ -35,8 +35,9 @@
         <div>
           <h5 class="mb-0">Liste des cours</h5>
         </div>
-        <a href="https://soft-ui-dashboard-pro-laravel.creative-tim.com/laravel-new-role"
-          class="btn bg-gradient-dark btn-sm mb-0" type="button">+&nbsp; Ajouter</a>
+        <a href="{{ route('lesson.create', ['courseId' => $course->id]) }}" class="btn bg-gradient-dark btn-sm mb-0"
+          type="button">+&nbsp;
+          Ajouter</a>
       </div>
       <p class="text-sm mb-0">
         {{ $course->name }}

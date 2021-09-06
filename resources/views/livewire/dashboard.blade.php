@@ -52,7 +52,8 @@
                            </div>
                            <div class="d-flex flex-column justify-content-center">
                              <h6 class="mb-0 text-sm">
-                               <a href="{{ route('lesson.view', [$course->id]) }}">{{ $course->name }}</a>
+                               <a
+                                 href="{{ route('lesson.view', ['courseId' => $course->id]) }}">{{ $course->name }}</a>
                              </h6>
                            </div>
                          </div>
