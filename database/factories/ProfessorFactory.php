@@ -26,7 +26,6 @@ class ProfessorFactory extends Factory
       'firstname' => $this->faker->firstName(),
       'lastname' => $this->faker->lastName(),
       'photo' => $this->faker->url(),
-      'course_id' => Course::all()->random()->id,
     ];
   }
 }

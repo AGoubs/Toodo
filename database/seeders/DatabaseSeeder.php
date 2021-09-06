@@ -12,20 +12,20 @@ use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@softui.com',
-            'password' => Hash::make('secret')
-        ]);
-        Course::factory(5)->create();
-        Professor::factory(5)->create();
-        Lesson::factory(15)->create();
-    }
+  /**
+   * Seed the application's database.
+   *
+   * @return void
+   */
+  public function run()
+  {
+    User::factory()->create([
+      'name' => 'admin',
+      'email' => 'admin@softui.com',
+      'password' => Hash::make('secret')
+    ]);
+    Professor::factory(5)->create();
+    Course::factory(5)->create();
+    Lesson::factory(15)->create();
+  }
 }

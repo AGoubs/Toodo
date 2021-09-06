@@ -18,7 +18,6 @@ class CreateProfessorsTable extends Migration
       $table->string('firstname');
       $table->string('lastname');
       $table->string('photo');
-      $table->foreignId('course_id')->constrained();
       $table->timestamps();
     });
   }
