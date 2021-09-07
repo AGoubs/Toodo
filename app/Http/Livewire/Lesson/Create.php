@@ -11,19 +11,34 @@ class Create extends Component
 {
   public $professor;
   public $course;
-  public $lessons;
+  public $lesson;
+
   public $courseId;
-  protected $queryString = ['courseId'];
+  // protected $queryString = ['courseId'];
+
+  protected $rules = [
+    'lesson.name' => 'required',
+    'lesson.content' => 'required'
+  ];
 
   public function render()
   {
-    $this->course = Course::where('id', $this->courseId)->first();
-    $this->lessons = Lesson::where('course_id', $this->courseId)->get();
-    $this->professor = Professor::where('id', $this->course->professor_id)->first();
+    // $this->lesson = new Lesson();
+
+    // $this->course = Course::where('id', $this->courseId)->first();
+    // $this->professor = Professor::where('id', $this->course->professor_id)->first();
     return view('livewire.lesson.create');
   }
 
   public function mount()
   {
+    $this->lesson = new Lesson();
+  }
+
+  public function createLesson()
+  {
+    $this->validate();
+    dd($this->lesson);
+    $this->lesson->save();
   }
 }
