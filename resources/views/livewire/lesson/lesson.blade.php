@@ -48,23 +48,32 @@
         <thead class="thead-light">
           <tr>
             <th>Nom</th>
-            <th>Contenu</th>
             <th>Date</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tfoot>
           <tr>
             <th>Nom</th>
-            <th>Contenu</th>
             <th>Date</th>
+            <th>Action</th>
           </tr>
         </tfoot>
         <tbody>
           @foreach ($lessons as $lesson)
             <tr>
               <td class="text-sm font-weight-normal text-justify">{{ $lesson->name }}</td>
-              <td class="text-sm font-weight-normal text-justify">{{ $lesson->content }}</td>
+              {{-- <td class="text-sm font-weight-normal text-justify">{{ $lesson->content }}</td> --}}
               <td class="text-sm font-weight-normal">{{ date('d/m/Y', strtotime($lesson->created_at)) }}</td>
+              <td class="text-sm">
+                <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip"
+                  data-bs-original-title="Modifier">
+                  <i class="fas fa-user-edit text-secondary" aria-hidden="true"></i>
+                </a>
+                <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Supprimer">
+                  <i class="fas fa-trash text-secondary" aria-hidden="true"></i>
+                </a>
+              </td>
             </tr>
           @endforeach
 
