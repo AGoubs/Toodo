@@ -17,13 +17,18 @@ class Lesson extends Component
 
   public function render()
   {
-    $this->course = Course::where('id', $this->courseId)->first();
-    $this->lessons = LessonModel::where('course_id', $this->courseId)->orderBy('created_at', 'desc')->get();
-    $this->professor = Professor::where('id', $this->course->professor_id)->first();
+    $this->course = Course::find($this->courseId);
+    $this->lessons = LessonModel::where('course_id', $this->courseId)->orderBy('updated_at', 'desc')->get();
+    $this->professor = Professor::find($this->course->professor_id);
     return view('livewire.lesson.lesson');
   }
 
   public function mount()
   {
+  }
+
+  public function lessonRead($id)
+  {
+    return redirect()->route('lesson.read', ['lessonId' => $id, 'courseId' => $this->courseId]);
   }
 }

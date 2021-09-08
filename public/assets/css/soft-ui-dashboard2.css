@@ -27513,3 +27513,18 @@ ul li.editMode input[type=text] {
   transition-delay: 0s;
   transform: scale(1);
 }
+
+.clickable_row {
+  cursor: pointer;
+}
+
+.clickable_row:hover {
+  background-color: #e9ecef;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 100px;
+  width: 1000px;
+}

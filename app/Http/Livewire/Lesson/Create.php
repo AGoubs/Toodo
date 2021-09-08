@@ -17,10 +17,6 @@ class Create extends Component
   public $courseId;
   protected $queryString = ['courseId'];
 
-  protected $rules = [
-    'name' => '',
-    'content' => ''
-  ];
 
   public function render()
   {
@@ -35,7 +31,6 @@ class Create extends Component
 
   public function submit()
   {
-    $this->validate();
     Lesson::create([
       'name' => $this->name,
       'content' => $this->content,

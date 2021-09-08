@@ -34,15 +34,15 @@
             <p class="text-sm mb-0">Créer une nouvelle leçon</p>
             <hr class="horizontal dark my-3">
             <label for="lessonName" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="lessonName" wire:model="name">
-            @error('name') <div class="text-danger text-sm">{{ $message }}</div> @enderror
+            <input type="text" class="form-control" id="lessonName" wire:model="name" required autofocus>
             <label class="mt-4">Contenu</label>
             <p class="form-text text-muted text-xs ms-1">
               C'est ainsi que vous verrez votre leçon, alors faites-le bien !
             </p>
             <div id="editor" class="ql-container ql-snow">
               <div class="ql-editor" data-gramm="false" contenteditable="true">
-
+                <br>
+                <br>
               </div>
               <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
               <div class="ql-tooltip ql-hidden"><a class="ql-preview" rel="noopener noreferrer" target="_blank"
@@ -50,10 +50,10 @@
                   data-video="Embed URL" required><a class="ql-action"></a><a class="ql-remove"></a></div>
             </div>
             <input type="hidden" name="content" id="content" wire:model="content">
-            @error('content') <div class="text-danger text-sm">{{ $message }}</div> @enderror
 
             <div class="d-flex justify-content-between mt-4">
-              <button type="button" name="button" id="btn-back" class="btn btn-light m-0">Retour</button>
+              <a href="{{ route('lesson.view', ['courseId' => $course->id]) }}" class="btn btn-light m-0"
+                type="button">Retour</a>
               <button type="submit" id="btn-submit" name="button" class="btn bg-gradient-dark m-0 ms-2">Ajouter une
                 leçon</button>
             </div>
