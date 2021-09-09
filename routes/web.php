@@ -20,6 +20,8 @@ use App\Http\Livewire\LaravelExamples\UserManagement;
 use App\Http\Livewire\Lesson\Create;
 use App\Http\Livewire\Lesson\Lesson;
 use App\Http\Livewire\Lesson\Read;
+use App\Http\Livewire\Professor\Create as ProfessorCreate;
+use App\Http\Livewire\Professor\Read as ProfessorRead;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +45,14 @@ Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')
 
 Route::middleware('auth')->group(function () {
   Route::get('/dashboard', Dashboard::class)->name('dashboard');
+
   Route::get('/lesson/view', Lesson::class)->name('lesson.view');
   Route::get('/lesson/create', Create::class)->name('lesson.create');
   Route::get('/lesson/read', Read::class)->name('lesson.read');
+  
+  Route::get('/professor/create', ProfessorCreate::class)->name('professor.create');
+  Route::get('/professor/read', ProfessorRead::class)->name('professor.read');
+
   Route::get('/billing', Billing::class)->name('billing');
   Route::get('/profile', Profile::class)->name('profile');
   Route::get('/tables', Tables::class)->name('tables');

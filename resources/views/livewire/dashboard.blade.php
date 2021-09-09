@@ -279,27 +279,19 @@
         <div class="card">
           <div class="card-header pb-0">
             <div class="row">
-              <div class="col-lg-6 col-7">
-                <h6>Professeurs</h6>
+              <div class="col-lg-12 col-12">
+                <div class="d-flex flex-row justify-content-between">
+                  <div>
+                    <h5 class="mb-0">Professeurs</h5>
+                  </div>
+                  <a href="{{ route('professor.create') }}" class="btn bg-gradient-dark btn-sm mb-0"
+                    type="button">+&nbsp;
+                    Ajouter</a>
+                </div>
                 <p class="text-sm mb-0">
                   <i class="fa fa-check text-info" aria-hidden="true"></i>
                   <span class="font-weight-bold ms-1">{{ $nbProfessors }} profs</span> cette année
                 </p>
-              </div>
-              <div class="col-lg-6 col-5 my-auto text-end">
-                <div class="dropdown float-lg-end pe-4">
-                  <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-ellipsis-v text-secondary"></i>
-                  </a>
-                  <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a>
-                    </li>
-                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Another
-                        action</a></li>
-                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Something
-                        else here</a></li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -325,7 +317,7 @@
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">
                               <a
-                                href="{{ route('lesson.view', ['courseId' => $professor->id]) }}">{{ $professor->firstname }} {{ $professor->lastname }}</a>
+                                href="{{ route('professor.read', ['professorId' => $professor->id]) }}">{{ $professor->firstname }} {{ $professor->lastname }}</a>
                             </h6>
                           </div>
                         </div>
@@ -346,22 +338,6 @@
           </div>
         </div>
       </div>
-       {{-- <div class="col-lg-7">
-         <div class="card">
-           <div class="card-header pb-0">
-             <h6>Sales overview</h6>
-             <p class="text-sm">
-               <i class="fa fa-arrow-up text-success"></i>
-               <span class="font-weight-bold">4% more</span> in 2021
-             </p>
-           </div>
-           <div class="card-body p-3">
-             <div class="chart">
-               <canvas id="chart-line" class="chart-canvas" height="300px"></canvas>
-             </div>
-           </div>
-         </div>
-       </div> --}}
      </div>
    </div>
  </main>

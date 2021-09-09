@@ -81,6 +81,7 @@
 <script>
   const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
     searchable: true,
-    fixedHeight: true
+    fixedHeight: true,
+    perPage: 25,
   });
 </script>
