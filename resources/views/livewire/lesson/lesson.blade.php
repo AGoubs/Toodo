@@ -34,7 +34,7 @@
       <div class="card-header" style="padding-bottom: 0 !important">
         <div class="d-flex flex-row justify-content-between">
           <div>
-            <h5 class="mb-0">Liste des cours</h5>
+            <h5 class="mb-0">Liste des leçons</h5>
           </div>
           <a href="{{ route('lesson.create', ['courseId' => $course->id]) }}" class="btn bg-gradient-dark btn-sm mb-0"
             type="button">+&nbsp;

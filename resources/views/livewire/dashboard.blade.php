@@ -105,7 +105,9 @@
                      <i class="ni ni-book-bookmark text-success text-gradient"></i>
                    </span>
                    <div class="timeline-content">
-                     <h6 class="text-dark text-sm font-weight-bold mb-0">{{ $lesson->name }}</h6>
+                     <h6 class="text-dark text-sm font-weight-bold mb-0">
+                      <a href="{{ route('lesson.read', ['lessonId' => $lesson->id, 'courseId' => $lesson->course_id]) }}">
+                      {{ $lesson->name }}</a></h6>
                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
                        {{ strtoupper(date('d M h:m', strtotime($lesson->created_at))) }}</p>
                    </div>

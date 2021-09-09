@@ -4,11 +4,17 @@
       <div class="col-12 mx-auto">
         <div class="card card-body mt-4">
           <form wire:submit.prevent="update">
-            <h6 class="mb-0">Nouvelle leçon</h6>
+            <div class="d-flex flex-row justify-content-between">
+              <div>
+                <h6 class="mb-0">Modifier la leçon</h6>
+              </div>
+              <button class="btn bg-gradient-danger btn-sm mb-0" type="button"  onclick="confirm('Supprimer cette leçon ?') || event.stopImmediatePropagation()" wire:click="delete({{$lessonId}})">
+                Supprimer</button>
+            </div>
             <p class="text-sm mb-0">Créer une nouvelle leçon</p>
             <hr class="horizontal dark my-3">
             <label for="lessonName" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="lessonName" wire:model="name" required autofocus>
+            <input type="text" class="form-control" id="lessonName" wire:model.defer="name" required autofocus>
             <label class="mt-4">Contenu</label>
             <p class="form-text text-muted text-xs ms-1">
               C'est ainsi que vous verrez votre leçon, alors faites-le bien !
