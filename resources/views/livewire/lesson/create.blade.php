@@ -1,5 +1,5 @@
 <div>
-  <div class="container-fluid">
+  {{-- <div class="container-fluid">
     <div class="page-header min-height-300 border-radius-xl mt-4"
       style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
       <span class="mask bg-gradient-dark opacity-6"></span>
@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   <div class="container-fluid py-1">
     <div class="row">
       <div class="col-12 mx-auto">
@@ -34,15 +34,13 @@
             <p class="text-sm mb-0">Créer une nouvelle leçon</p>
             <hr class="horizontal dark my-3">
             <label for="lessonName" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="lessonName" wire:model="name" required autofocus>
+            <input type="text" class="form-control" id="lessonName" wire:model.defer="name" required autofocus>
             <label class="mt-4">Contenu</label>
             <p class="form-text text-muted text-xs ms-1">
               C'est ainsi que vous verrez votre leçon, alors faites-le bien !
             </p>
             <div id="editor" class="ql-container ql-snow">
               <div class="ql-editor" data-gramm="false" contenteditable="true">
-                <br>
-                <br>
               </div>
               <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
               <div class="ql-tooltip ql-hidden"><a class="ql-preview" rel="noopener noreferrer" target="_blank"
