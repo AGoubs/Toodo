@@ -16,7 +16,7 @@ class Dashboard extends Component
   public function render()
   {
     $this->courses = Course::all();
-    $this->lessons = Lesson::take(6)->orderBy('created_at', 'desc')->get();
+    $this->lessons = Lesson::take(5)->orderBy('created_at', 'desc')->get();
     $this->nbLessons = Lesson::count();
     $this->nbCourses = count($this->courses);
     return view('livewire.dashboard');
