@@ -1,13 +1,32 @@
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="toast-header">
-    <img src="..." class="rounded mr-2" alt="...">
-    <strong class="mr-auto">Bootstrap</strong>
-    <small>11 mins ago</small>
-    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+{{-- <footer class="footer pb-4">
+  <div class="container-fluid">
+    <div class="row align-items-center justify-content-lg-between">
+      <div class="col-lg-6 mb-lg-0 mb-4">
+        <div class="copyright text-center text-sm text-muted text-lg-left">
+          © {{ now()->year }} Todo by <a style="color: #252f40;" href="http://www.w3clic.com/"
+            class="font-weight-bold ml-1" target="_blank">w3clic</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative
+              Tim</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.updivision.com" class=" nav-link text-muted" target="_blank">UPDIVISION</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="toast-body">
-    Hello, world! This is a toast message.
-  </div>
-</div>
+</footer> --}}
