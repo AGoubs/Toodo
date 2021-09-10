@@ -8,11 +8,8 @@
       <div class="row gx-4">
         <div class="col-auto">
           <div class="avatar avatar-xl position-relative">
-            <img src="../assets/img/bruce-mars.jpg" alt="..." class="w-100 border-radius-lg shadow-sm">
-            <a href="javascript:;"
-              class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
-              <i class="fa fa-pen top-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Image"></i>
-            </a>
+            @livewire('photo.big-professor', ['professorId' => $professor->id])
+        
           </div>
         </div>
         <div class="col-auto my-auto">
@@ -49,6 +46,7 @@
           <thead class="thead-light">
             <tr>
               <th>Nom</th>
+              <th>Nom</th>
               <th>Date Création</th>
               <th>Dernière Modification</th>
             </tr>
@@ -57,6 +55,7 @@
             <tr>
               <th>Nom</th>
               <th>Date Création</th>
+              <th>Date Création</th>
               <th>Dernière Modification</th>
             </tr>
           </tfoot>
@@ -64,7 +63,7 @@
             @foreach ($lessons as $lesson)
               <tr wire:click="lessonRead({{ $lesson->id }})" class="clickable_row">
                 <td class=" text-sm font-weight-normal text-justify">{{ $lesson->name }}</td>
-                {{-- <td class="text-sm font-weight-normal text-justify">{{ $lesson->content }}</td> --}}
+                <td class="text-sm font-weight-normal text-justify">{{ $lesson->content }}</td>
                 <td class="text-sm font-weight-normal">{{ date('d/m/Y', strtotime($lesson->created_at)) }}</td>
                 <td class="text-sm font-weight-normal">{{ date('d/m/Y', strtotime($lesson->updated_at)) }}</td>
               </tr>

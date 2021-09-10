@@ -17,8 +17,7 @@
 
                   <input type="file" wire:model="upload" id="file-input" accept="image/*" class="d-none">
                   <span class="h-12 w-12 rounded-full overflow-hidden bg-gray-100">
-                    <img src="../assets/img/user-placeholder.png"
-                      alt="Profile Photo" class="rounded">
+                    <img src="../assets/img/user-placeholder.png" alt="Profile Photo" class="rounded">
                   </span>
                 </div>
               </div>
@@ -26,8 +25,8 @@
             <div class="col-auto my-auto">
               <div class="h-100">
                 <h5 class="mb-1">
-                  {{$professor->firstname}} 
-                  {{$professor->lastname}}
+                  {{ $professor->firstname }}
+                  {{ $professor->lastname }}
                 </h5>
               </div>
             </div>
@@ -37,9 +36,6 @@
           <div>
           </div>
         </div>
-
-
-
         <!-- Card Basic Info -->
         <div class="card mt-4" id="basic-info">
           <div class="card-header">
@@ -53,20 +49,20 @@
                   <div class="input-group ">
                     <input wire:model="professor.firstname" id="firstName" name="firstName" class="form-control"
                       type="text" placeholder="Robert" required="required">
-                      @error('professor.firstname') <div class="text-danger">{{ $message }}</div> @enderror
+                    @error('professor.firstname') <div class="text-danger">{{ $message }}</div> @enderror
                   </div>
                 </div>
                 <div class="col-6">
                   <label class="form-label" for="#lastName">Last Name</label>
                   <div class="input-group ">
-                    <input wire:model="professor.lastname" id="lastName" name="lastName" class="form-control" type="text"
-                      placeholder="Martin" required="required">
-                      @error('professor.lastname') <div class="text-danger">{{ $message }}</div> @enderror
+                    <input wire:model="professor.lastname" id="lastName" name="lastName" class="form-control"
+                      type="text" placeholder="Martin" required="required">
+                    @error('professor.lastname') <div class="text-danger">{{ $message }}</div> @enderror
                   </div>
                 </div>
               </div>
-              <div class="">
-                            <button type="submit"
+              <div class=""> 
+                            <button type=" submit"
                 class="btn bg-gradient-dark btn-sm float-end mt-6 mb-0">Sauvegarder</button>
               </div>
             </form>

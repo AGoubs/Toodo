@@ -2,17 +2,17 @@
 
 namespace App\Http\Livewire\Photo;
 
-use App\Models\Professor as ModelsProfessor;
+use App\Models\Professor;
 use Livewire\Component;
 
-class Professor extends Component
+class BigProfessor extends Component
 {
   public $professorId;
   public $photo;
   public function render()
   {
-    $professor = ModelsProfessor::find($this->professorId);
+    $professor = Professor::find($this->professorId);
     $this->photo = $professor->photo;
-    return view('livewire.photo.professor');
+    return view('livewire.photo.big-professor');
   }
 }

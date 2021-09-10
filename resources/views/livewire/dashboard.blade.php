@@ -324,10 +324,8 @@
                       </td>
                       <td>
                         <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-sm rounded-circle" data-bs-toggle="tooltip"
-                            data-bs-placement="bottom" title="Ryan Tompson">
-                            <img alt="Image placeholder" src="../assets/img/team-4.jpg">
-                          </a>
+                          @livewire('photo.professor', ['professorId' => $professor->id])
+                          
                         </div>
                       </td>
                     </tr>
