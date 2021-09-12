@@ -1,13 +1,15 @@
 <div>
-  <a href="javascript:;" class="avatar avatar-sm rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom"
-    title="Ryan Tompson">
-    <p></p>
-    @if (isset($photo))
-      <img alt="Image placeholder" src="{{$photo}}">
+  @if (isset($size))
+    <a href="{{ route('professor.read', ['professorId' => $professor->id]) }}" class="avatar avatar-{{ $size }} rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ $professor->firstname }} {{ $professor->lastname }}">
+  @endif
 
-    @else
-      <img alt="Image placeholder" src="../assets/img/user-placeholder.png">
+  @if (isset($professor->photo) && file_exists(public_path('storage/photos/' . $professor->photo)))
+    <img src="{{ asset('storage/photos/' . $professor->photo) }}" alt="profile picture" class="w-100 border-radius-lg shadow-sm">
+  @else
+    <img src="../assets/img/user-placeholder.png" alt="..." class="w-100 border-radius-lg shadow-sm">
+  @endif
 
-    @endif
-  </a>
+  @if (isset($size))
+    </a>
+  @endif
 </div>

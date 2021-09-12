@@ -59,11 +59,8 @@
                          </div>
                        </td>
                        <td>
-                         <div class="avatar-group mt-2">
-                           <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip"
-                             data-bs-placement="bottom" title="Ryan Tompson">
-                             <img alt="Image placeholder" src="../assets/img/team-4.jpg">
-                           </a>
+                         <div class="avatar-group">
+                           @livewire('photo.professor', ['professorId' => $course->professor_id, 'size' => 'xs'])
                          </div>
                        </td>
 
@@ -106,8 +103,10 @@
                    </span>
                    <div class="timeline-content">
                      <h6 class="text-dark text-sm font-weight-bold mb-0">
-                      <a href="{{ route('lesson.read', ['lessonId' => $lesson->id, 'courseId' => $lesson->course_id]) }}">
-                      {{ $lesson->name }}</a></h6>
+                       <a
+                         href="{{ route('lesson.read', ['lessonId' => $lesson->id, 'courseId' => $lesson->course_id]) }}">
+                         {{ $lesson->name }}</a>
+                     </h6>
                      <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">
                        {{ strtoupper(date('d M h:m', strtotime($lesson->created_at))) }}</p>
                    </div>
@@ -276,66 +275,65 @@
          </div>
        </div>
        <div class="col-lg-7 col-md-6 mb-md-0 mb-4">
-        <div class="card">
-          <div class="card-header pb-0">
-            <div class="row">
-              <div class="col-lg-12 col-12">
-                <div class="d-flex flex-row justify-content-between">
-                  <div>
-                    <h5 class="mb-0">Professeurs</h5>
-                  </div>
-                  <a href="{{ route('professor.create') }}" class="btn bg-gradient-dark btn-sm mb-0"
-                    type="button">+&nbsp;
-                    Ajouter</a>
-                </div>
-                <p class="text-sm mb-0">
-                  <i class="fa fa-check text-info" aria-hidden="true"></i>
-                  <span class="font-weight-bold ms-1">{{ $nbProfessors }} profs</span> cette année
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card-body px-0 pb-2">
-            <div class="table-responsive">
-              <table class="table align-items-center mb-0">
-                <thead>
-                  <tr>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                      Nom Prénom</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                      Photo</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach ($professors as $professor)
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">
-                              <a
-                                href="{{ route('professor.read', ['professorId' => $professor->id]) }}">{{ $professor->firstname }} {{ $professor->lastname }}</a>
-                            </h6>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          @livewire('photo.professor', ['professorId' => $professor->id])
-                          
-                        </div>
-                      </td>
-                    </tr>
-                  @endforeach
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
+         <div class="card">
+           <div class="card-header pb-0">
+             <div class="row">
+               <div class="col-lg-12 col-12">
+                 <div class="d-flex flex-row justify-content-between">
+                   <div>
+                     <h5 class="mb-0">Professeurs</h5>
+                   </div>
+                   <a href="{{ route('professor.create') }}" class="btn bg-gradient-dark btn-sm mb-0"
+                     type="button">+&nbsp;
+                     Ajouter</a>
+                 </div>
+                 <p class="text-sm mb-0">
+                   <i class="fa fa-check text-info" aria-hidden="true"></i>
+                   <span class="font-weight-bold ms-1">{{ $nbProfessors }} profs</span> cette année
+                 </p>
+               </div>
+             </div>
+           </div>
+           <div class="card-body px-0 pb-2">
+             <div class="table-responsive">
+               <table class="table align-items-center mb-0">
+                 <thead>
+                   <tr>
+                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                       Nom Prénom</th>
+                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                       Photo</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   @foreach ($professors as $professor)
+                     <tr>
+                       <td>
+                         <div class="d-flex px-2 py-1">
+                           <div>
+                             <img src="../assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3">
+                           </div>
+                           <div class="d-flex flex-column justify-content-center">
+                             <h6 class="mb-0 text-sm">
+                               <a href="{{ route('professor.read', ['professorId' => $professor->id]) }}">{{ $professor->firstname }}
+                                 {{ $professor->lastname }}</a>
+                             </h6>
+                           </div>
+                         </div>
+                       </td>
+                       <td>
+                         <div class="avatar-group">
+                           @livewire('photo.professor', ['professorId' => $professor->id, 'size' => 'sm'])
+                         </div>
+                       </td>
+                     </tr>
+                   @endforeach
+                 </tbody>
+               </table>
+             </div>
+           </div>
+         </div>
+       </div>
      </div>
    </div>
  </main>

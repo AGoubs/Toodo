@@ -8,8 +8,8 @@
       <div class="row gx-4">
         <div class="col-auto">
           <div class="avatar avatar-xl position-relative">
-            @livewire('photo.big-professor', ['professorId' => $professor->id])
-        
+            @livewire('photo.professor', ['professorId' => $professor->id])
+
           </div>
         </div>
         <div class="col-auto my-auto">
