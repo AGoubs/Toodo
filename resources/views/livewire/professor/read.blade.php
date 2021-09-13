@@ -1,7 +1,7 @@
 <div>
   <div class="container-fluid my-3 py-3 d-flex flex-column">
     <div class="row mb-5 justify-content-center align-items-center">
-      <div class="col-9">
+      <div class="col-lg-9 col-md-12">
         @if (session()->has('success'))
         <div
           class="alert position-absolute top-0 border-0 text-white w-50 end-0 start-0 mt-2 mx-auto py-2 alert-success"
