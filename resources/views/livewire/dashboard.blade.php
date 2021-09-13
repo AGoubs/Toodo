@@ -56,7 +56,7 @@
                     </td>
                     <td class="text-sm font-weight-bold text-center">
                       <span class="my-2 text-sm"><a
-                          href="https://soft-ui-dashboard-pro-laravel.creative-tim.com/laravel-edit-tag/3" class="mx-3"
+                          href="{{route('course.read', ['courseId' => $course->id])}}" class="mx-3"
                           data-bs-toggle="tooltip" data-bs-original-title="Editer">
                           <i class="fas fa-user-edit text-secondary" aria-hidden="true"></i>
                         </a>

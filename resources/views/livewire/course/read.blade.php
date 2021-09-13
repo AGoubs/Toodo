@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-8 mx-auto">
         <div class="card card-body mt-4">
-          <form wire:submit.prevent="submit">
+          <form wire:submit.prevent="update">
             <h6 class="mb-0">Nouveau cours</h6>
             <p class="text-sm mb-0">Créer un nouveau cours</p>
             <hr class="horizontal dark my-3">
@@ -18,9 +18,11 @@
                 <label class="form-label">Professeur</label>
                 <select wire:model="course.professor_id" class="form-control" aria-label="Professor select"
                   id="choices-professor">
-                  <option value="">Professeur</option>
+                  <option value="{{$courseProfessor->id}}">{{$courseProfessor->firstname}} {{$courseProfessor->lastname}}</option>
                   @foreach ($professors as $professor)
+                  @if ($professor->id != $courseProfessor->id )
                     <option value="{{$professor->id}}">{{$professor->firstname}} {{$professor->lastname}}</option>
+                  @endif
                   @endforeach
                 </select>
               </div>
@@ -34,7 +36,7 @@
 
             <div class="d-flex justify-content-between mt-4">
               <a href="{{ route('dashboard') }}" class="btn btn-light m-0" type="button">Retour</a>
-              <button type="submit" id="btn-submit" name="button" class="btn bg-gradient-dark m-0 ms-2">Ajouter un cours</button>
+              <button type="submit" id="btn-submit" name="button" class="btn bg-gradient-dark m-0 ms-2">Modifier le cours</button>
             </div>
           </form>
 
