@@ -3,16 +3,16 @@
     <div class="row mb-5 justify-content-center align-items-center">
       <div class="col-9">
         @if (session()->has('success'))
-          <div
-            class="alert position-absolute top-0 border-0 text-white w-50 end-0 start-0 mt-2 mx-auto py-2 alert-success"
-            style=" opacity: 1 !important; transition: all 0.35s ease 0s;" x-data="{ show: true }" x-show="show"
-            x-init="setTimeout(() => show = false, 3000)">
-            <div class="d-flex mb-1">
-              <div class="alert-icon me-1"><i class="ni ni-bell-55 mt-1"></i></div><span
-                class="alert-text"><strong>Succès</strong></span>
-            </div>
-            <span class="text-sm">{{ session()->get('success') }}</span>
+        <div
+          class="alert position-absolute top-0 border-0 text-white w-50 end-0 start-0 mt-2 mx-auto py-2 alert-success"
+          style=" opacity: 1 !important; transition: all 0.35s ease 0s;" x-data="{ show: true }" x-show="show"
+          x-init="setTimeout(() => show = false, 3000)">
+          <div class="d-flex mb-1">
+            <div class="alert-icon me-1"><i class="ni ni-bell-55 mt-1"></i></div><span
+              class="alert-text"><strong>Succès</strong></span>
           </div>
+          <span class="text-sm">{{ session()->get('success') }}</span>
+        </div>
         @endif
 
         <!-- Card Profile -->
@@ -45,11 +45,12 @@
               </div>
             </div>
             <div class="col-auto ms-auto">
+              <button class="btn bg-gradient-danger btn-sm mb-0" type="button"  onclick="confirm('Supprimer ce professeur ?') || event.stopImmediatePropagation()" wire:click="delete({{$professor->id}})">
+                Supprimer</button>
             </div>
           </div>
-          <div>
-          </div>
         </div>
+
         <!-- Card Basic Info -->
         <div class="card mt-4" id="basic-info">
           <div class="card-header">
@@ -68,15 +69,14 @@
               <div class="col-6">
                 <label class="form-label" for="#lastName">Last Name</label>
                 <div class="input-group ">
-                  <input wire:model="professor.lastname" id="lastName" name="lastName" class="form-control"
-                    type="text" placeholder="Martin" required="required">
+                  <input wire:model="professor.lastname" id="lastName" name="lastName" class="form-control" type="text"
+                    placeholder="Martin" required="required">
                   @error('professor.lastname') <div class="text-danger">{{ $message }}</div> @enderror
                 </div>
               </div>
             </div>
-            <div class=""> 
-                            <button type=" submit"
-              class="btn bg-gradient-dark btn-sm float-end mt-6 mb-0">Sauvegarder</button>
+            <div class="">
+              <button type=" submit" class="btn bg-gradient-dark btn-sm float-end mt-6 mb-0">Sauvegarder</button>
             </div>
             </form>
           </div>

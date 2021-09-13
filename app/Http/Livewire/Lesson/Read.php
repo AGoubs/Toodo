@@ -46,6 +46,5 @@ class Read extends Component
   {
     Lesson::find($id)->delete();
     return redirect()->route('lesson.view', ['courseId' => $this->courseId]);
-
   }
 }
