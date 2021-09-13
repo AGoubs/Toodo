@@ -25,7 +25,6 @@
                           class="w-100 border-radius-lg shadow-sm">
                       @endif
                     </span>
-                    @error('photo') <span class=" text-sm italic text-red-500">{{ $message }}</span>@enderror
                   </div>
                 </div>
             </div>

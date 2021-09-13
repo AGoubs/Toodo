@@ -8,6 +8,7 @@ use App\Http\Livewire\Auth\SignUp;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Billing;
+use App\Http\Livewire\Course\Create as CourseCreate;
 use App\Http\Livewire\Profile;
 use App\Http\Livewire\Tables;
 use App\Http\Livewire\StaticSignIn;
@@ -52,6 +53,8 @@ Route::middleware('auth')->group(function () {
   
   Route::get('/professor/create', ProfessorCreate::class)->name('professor.create');
   Route::get('/professor/read', ProfessorRead::class)->name('professor.read');
+
+  Route::get('/course/create', CourseCreate::class)->name('course.create');
 
   Route::get('/billing', Billing::class)->name('billing');
   Route::get('/profile', Profile::class)->name('profile');

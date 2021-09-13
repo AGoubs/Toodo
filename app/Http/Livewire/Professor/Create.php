@@ -15,7 +15,7 @@ class Create extends Component
   protected $rules = [
     'professor.firstname' => 'required|string',
     'professor.lastname' => 'required|string',
-    'photo' => 'image'
+    'photo' => ''
   ];
 
   public function render()
@@ -33,9 +33,12 @@ class Create extends Component
     $this->validate();
 
 
-    $name = md5($this->photo . microtime()) . '.' . $this->photo->extension();
-    $this->photo->storeAs('photos', $name);
-    $this->professor->photo = $name;
+    if ($this->photo) {
+      $name = md5($this->photo . microtime()) . '.' . $this->photo->extension();
+      $this->photo->storeAs('photos', $name);
+      $this->professor->photo = $name;
+    }
+   
 
     $this->professor->save();
     return redirect()->route('dashboard');
