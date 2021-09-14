@@ -3,13 +3,7 @@
   <div class="card-header pb-0">
     <div class="row">
       <div class="col-lg-12 col-12">
-        <div class="d-flex flex-row justify-content-between">
-          <div>
-            <h5 class="mb-0">Calendrier</h5>
-          </div>
-          <a href="{{ route('professor.create') }}" class="btn bg-gradient-dark btn-sm mb-0" type="button">+&nbsp;
-            Ajouter</a>
-        </div>
+        <h5 class="mb-0">Calendrier</h5>
       </div>
     </div>
   </div>
@@ -29,10 +23,13 @@
     var calendarEl = document.getElementById('calendar');
     var checkbox = document.getElementById('drop-remove');
     var data = @this.events;
+    console.log(@this.events);
     var calendar = new Calendar(calendarEl, {
       height: 550,
       locale: 'fr',
       events: JSON.parse(data),
+      eventDisplay: 'block',
+      // eventClassNames: 'bg-gradient-primary',
       dateClick(info) {
         var title = prompt('Titre de votre évènement');
         var date = new Date(info.dateStr + 'T00:00:00');
@@ -57,7 +54,10 @@
         }
       },
       eventClick: function(info) {
-        alert('Event: ' + info.event.title);
+        if (confirm('Voulez supprimer l\'évènement : ' + info.event.title)) {
+          @this.deleteEvent(info.event);
+          info.event.remove();
+        }
       },
       editable: true,
       selectable: true,

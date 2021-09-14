@@ -25,11 +25,6 @@ class Calendar extends Component
     return  json_encode($events);
   }
 
-  /**
-   * Write code on Method
-   *
-   * @return response()
-   */
   public function addevent($event)
   {
     $input['title'] = $event['title'];
@@ -38,11 +33,11 @@ class Calendar extends Component
     return $newEvent->id;
   }
 
-  /**
-   * Write code on Method
-   *
-   * @return response()
-   */
+  public function deleteEvent($event)
+  {
+    Event::find($event['id'])->delete();
+  }
+
   public function eventDrop($event, $oldEvent)
   {
     $eventdata = Event::find($event['id']);

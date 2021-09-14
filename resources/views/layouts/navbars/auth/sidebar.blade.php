@@ -1,10 +1,8 @@
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3"
-  id="sidenav-main" data-color="primary">
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3" id="sidenav-main" data-color="dark">
   <div class="sidenav-header">
-    <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none"
-      aria-hidden="true" id="iconSidenav"></i>
+    <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute right-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="navbar-brand m-0" href="{{ route('dashboard') }}">
-      <img src="../assets/img/logos/books.png" class="navbar-brand-img h-100" alt="...">
+      <img src="../assets/img/logos/books.png" class="navbar-brand-img h-100" alt="..." style="margin-bottom: 2px">
       <span class="ms-1 font-weight-bold">&nbsp;Toodo Application</span>
     </a>
   </div>
@@ -12,16 +10,12 @@
   <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item pb-2">
-        <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}"
-          href="{{ route('dashboard') }}">
-          <div
-            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink">
+        <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}" href="{{ route('dashboard') }}">
+          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <title>shop </title>
               <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="Rounded-Icons" transform="translate(-1716.000000, -439.000000)" fill="#FFFFFF"
-                  fill-rule="nonzero">
+                <g id="Rounded-Icons" transform="translate(-1716.000000, -439.000000)" fill="#FFFFFF" fill-rule="nonzero">
                   <g id="Icons-with-opacity" transform="translate(1716.000000, 291.000000)">
                     <g id="shop-" transform="translate(0.000000, 148.000000)">
                       <path class="color-background"
@@ -44,30 +38,36 @@
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Professeurs</h6>
       </li>
       <li class="nav-item pb-2">
-        <a class="nav-link {{ Route::currentRouteName() == 'professor.create' ? 'active' : '' }}"
-          href="{{ route('professor.create') }}">
-          <div
-            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+        <a class="nav-link {{ Route::currentRouteName() == 'professor.create' ? 'active' : '' }}" href="{{ route('professor.create') }}">
+          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i style="font-size: .70rem;" class="fas fa-sm fa-user-plus ps-2 pe-2 text-center
-                        {{ in_array(request()->route()->getName(),['professor.create'],)? 'text-white': 'text-dark' }}"></i>
+                        {{ in_array(
+    request()->route()->getName(),
+    ['professor.create'],
+)
+    ? 'text-white'
+    : 'text-dark' }}"></i>
           </div>
           <span class="nav-link-text ms-1">Ajouter un prof</span>
         </a>
-      </li>     
+      </li>
       <li class="nav-item mt-2">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Cours</h6>
       </li>
       <li class="nav-item pb-2">
-        <a class="nav-link {{ Route::currentRouteName() == 'course.create' ? 'active' : '' }}"
-          href="{{ route('course.create') }}">
-          <div
-            class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+        <a class="nav-link {{ Route::currentRouteName() == 'course.create' ? 'active' : '' }}" href="{{ route('course.create') }}">
+          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <i style="font-size: 1rem;" class="fas fa-sm fa-file-medical ps-2 pe-2 text-center
-                        {{ in_array(request()->route()->getName(),['course.create'],)? 'text-white': 'text-dark' }}"></i>
+                        {{ in_array(
+    request()->route()->getName(),
+    ['course.create'],
+)
+    ? 'text-white'
+    : 'text-dark' }}"></i>
           </div>
           <span class="nav-link-text ms-1">Ajouter un cours</span>
         </a>
-      </li>      
+      </li>
     </ul>
   </div>
 </aside>
