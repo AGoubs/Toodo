@@ -31,21 +31,27 @@
     var data = @this.events;
     var calendar = new Calendar(calendarEl, {
       height: 550,
+      locale: 'fr',
       events: JSON.parse(data),
       dateClick(info) {
         var title = prompt('Titre de votre évènement');
         var date = new Date(info.dateStr + 'T00:00:00');
         if (title != null && title != '') {
-          calendar.addEvent({
-            title: title,
-            start: date,
-            allDay: true
-          });
           var eventAdd = {
             title: title,
             start: date
           };
-          @this.addevent(eventAdd);
+          let newId = Promise.resolve(@this.addevent(eventAdd));
+          newId.then((value) => {
+            calendar.addEvent({
+              id: value,
+              title: title,
+              start: date,
+              allDay: true
+            });
+          });
+
+
         } else {
           alert('Un titre est requis pour créer un évènement');
         }

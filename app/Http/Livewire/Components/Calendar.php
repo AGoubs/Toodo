@@ -34,7 +34,8 @@ class Calendar extends Component
   {
     $input['title'] = $event['title'];
     $input['start'] = $event['start'];
-    Event::create($input);
+    $newEvent = Event::create($input);
+    return $newEvent->id;
   }
 
   /**
@@ -44,7 +45,6 @@ class Calendar extends Component
    */
   public function eventDrop($event, $oldEvent)
   {
-    dd($event);
     $eventdata = Event::find($event['id']);
     $eventdata->start = $event['start'];
     $eventdata->save();
