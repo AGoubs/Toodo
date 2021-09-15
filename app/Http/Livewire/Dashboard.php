@@ -26,4 +26,10 @@ class Dashboard extends Component
     $this->nbCourses = count($this->courses);
     return view('livewire.dashboard');
   }
+
+  public function deleteCourse($id)
+  {
+    Course::find($id)->delete();
+    return redirect()->route('dashboard');
+  }
 }

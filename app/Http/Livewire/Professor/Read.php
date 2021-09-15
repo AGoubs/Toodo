@@ -34,4 +34,10 @@ class Read extends Component
     $this->professor->save();
     session()->flash('success', 'Modification effectuée avec succès !');
   }
+
+  public function delete($id)
+  {
+    Professor::find($id)->delete();
+    return redirect()->route('dashboard');
+  }
 }

@@ -13,5 +13,5 @@
 )
     ? 'text-white'
     : '' }}"
-    wire:click="logout">Sign Out</span>
+    wire:click="logout">Déconnexion</span>
 </div>

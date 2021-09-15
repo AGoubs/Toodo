@@ -8,11 +8,11 @@ use Livewire\Component;
 class Professor extends Component
 {
   public $professorId;
-  public $photo;
+  public $size;
+  public $professor;
   public function render()
   {
-    $professor = ModelsProfessor::find($this->professorId);
-    $this->photo = $professor->photo;
+    $this->professor = ModelsProfessor::find($this->professorId);
     return view('livewire.photo.professor');
   }
 }
