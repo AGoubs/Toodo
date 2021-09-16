@@ -25,8 +25,15 @@
       </div>
       @include('components.plugins.fixed-plugin')
     @else
-      @include('layouts.navbars.auth.sidebar')
-      @include('layouts.navbars.auth.nav')
+      @if (in_array(
+          request()->route()->getName(),
+          ['lesson.read'],
+      ))
+      @else
+        @include('layouts.navbars.auth.sidebar')
+        @include('layouts.navbars.auth.nav')
+      @endif
+
       @include('components.plugins.fixed-plugin')
       {{ $slot }}
       <main>

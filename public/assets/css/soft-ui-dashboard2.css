@@ -25065,7 +25065,7 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown
   box-sizing: border-box;
   font-family: 'Open Sans' !important;
   font-size: 15px !important;
-  height: 300px !important;
+  height: 100vh !important;
   margin: 0;
   position: relative;
 }
