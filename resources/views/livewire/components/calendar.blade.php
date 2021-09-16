@@ -49,8 +49,6 @@
           });
 
 
-        } else {
-          alert('Un titre est requis pour créer un évènement');
         }
       },
       eventClick: function(info) {
