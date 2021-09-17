@@ -25,12 +25,15 @@
       </div>
       @include('components.plugins.fixed-plugin')
     @else
+      @include('layouts.navbars.auth.sidebar')
+
       @if (in_array(
           request()->route()->getName(),
-          ['lesson.read'],
+          ['lesson.read', 'lesson.create'],
       ))
+        @include('layouts.navbars.auth.nav-lesson')
+
       @else
-        @include('layouts.navbars.auth.sidebar')
         @include('layouts.navbars.auth.nav')
       @endif
 

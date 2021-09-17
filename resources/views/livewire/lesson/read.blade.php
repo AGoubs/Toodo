@@ -1,7 +1,7 @@
 <div>
   <div class="container-fluid py-1">
     <div class="row">
-      <div class="col-6 mx-auto">
+      <div class="col-lg-8 col-md-6 mx-auto">
         <div class="card card-body mt-4">
           <form wire:submit.prevent="update">
             <div class="d-flex flex-row justify-content-between">
@@ -17,7 +17,7 @@
             <input type="text" class="form-control" id="lessonName" wire:model.defer="name" required autofocus>
             <label class="mt-4">Contenu</label>
             <p class="form-text text-muted text-xs ms-1">
-              C'est ainsi que vous verrez votre leçon, alors faites-le bien !
+              C'est ainsi que vous verrez votre leçon, alors appliquez vous !
             </p>
             <div id="editor" class="ql-container ql-snow">
               <div class="ql-editor" data-gramm="false" contenteditable="true">

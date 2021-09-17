@@ -1,7 +1,7 @@
 <div>
   <div class="container-fluid py-1">
     <div class="row">
-      <div class="col-12 mx-auto">
+      <div class="col-6 mx-auto">
         <div class="card card-body mt-4">
           <form wire:submit.prevent="submit">
             <h6 class="mb-0">Nouvelle leçon</h6>
@@ -17,15 +17,12 @@
               <div class="ql-editor" data-gramm="false" contenteditable="true">
               </div>
               <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>
-              <div class="ql-tooltip ql-hidden"><a class="ql-preview" rel="noopener noreferrer" target="_blank"
-                  href="about:blank"></a><input type="text" data-formula="e=mc^2" data-link="https://quilljs.com"
-                  data-video="Embed URL" required><a class="ql-action"></a><a class="ql-remove"></a></div>
+              <div class="ql-tooltip ql-hidden"><a class="ql-preview" rel="noopener noreferrer" target="_blank" href="about:blank"></a><input type="text" data-formula="e=mc^2" data-link="https://quilljs.com" data-video="Embed URL" required><a class="ql-action"></a><a class="ql-remove"></a></div>
             </div>
             <input type="hidden" name="content" id="content" wire:model="content">
 
             <div class="d-flex justify-content-between mt-4">
-              <a href="{{ route('lesson.view', ['courseId' => $course->id]) }}" class="btn btn-light m-0"
-                type="button">Retour</a>
+              <a href="{{ route('lesson.view', ['courseId' => $course->id]) }}" class="btn btn-light m-0" type="button">Retour</a>
               <button type="submit" id="btn-submit" name="button" class="btn bg-gradient-dark m-0 ms-2">Ajouter une
                 leçon</button>
             </div>

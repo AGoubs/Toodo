@@ -1,7 +1,6 @@
 <div>
   <div class="container-fluid">
-    <div class="page-header min-height-250 border-radius-xl mt-4"
-      style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
+    <div class="page-header min-height-250 border-radius-xl mt-4" style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
       <span class="mask bg-gradient-dark opacity-6"></span>
     </div>
     <div class="card card-body blur shadow-blur mx-4 mt-n6">
@@ -33,8 +32,7 @@
           <div>
             <h5 class="mb-0">Liste des leçons</h5>
           </div>
-          <a href="{{ route('lesson.create', ['courseId' => $course->id]) }}" class="btn bg-gradient-dark btn-sm mb-0"
-            type="button">+&nbsp;
+          <a href="{{ route('lesson.create', ['courseId' => $course->id]) }}" class="btn bg-gradient-dark btn-sm mb-0" type="button">+&nbsp;
             Ajouter</a>
         </div>
         <p class="text-sm mb-0">
@@ -76,7 +74,7 @@
   </div>
 </div>
 <script src="../../assets/js/plugins/datatables.js"></script>
-
+<script src="https://cdn.datatables.net/plug-ins/1.11.1/i18n/fr_fr.json"></script>
 <script>
   const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
     searchable: true,

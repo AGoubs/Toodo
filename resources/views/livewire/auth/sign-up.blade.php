@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">{{ __('Connexion') }}</button>
+                  <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">{{ __('Créer un compte') }}</button>
                 </div>
               </form>
             </div>
