@@ -39,7 +39,7 @@ use App\Http\Livewire\Professor\Read as ProfessorRead;
 Route::get('/', Login::class)->name('login');
 
 Route::get('/sign-up', SignUp::class)->name('sign-up');
-Route::get('/login', Login::class)->name('login');
+// Route::get('/login', Login::class)->name('login');
 
 Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-password');
 
@@ -51,7 +51,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/lesson/view', Lesson::class)->name('lesson.view');
   Route::get('/lesson/create', Create::class)->name('lesson.create');
   Route::get('/lesson/read', Read::class)->name('lesson.read');
-  
+
   Route::get('/professor/create', ProfessorCreate::class)->name('professor.create');
   Route::get('/professor/read', ProfessorRead::class)->name('professor.read');
 
