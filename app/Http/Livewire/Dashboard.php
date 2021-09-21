@@ -21,8 +21,8 @@ class Dashboard extends Component
     $this->courses = Course::where('user_id', auth()->id())->get();
     $this->professors = Professor::where('user_id', auth()->id())->get();
     $this->nbProfessors = count($this->professors);
-    $this->lessons = Lesson::take(5)->orderBy('created_at', 'desc')->get();
-    $this->nbLessons = Lesson::count();
+    $this->lessons = Lesson::take(5)->orderBy('created_at', 'desc')->where('user_id', auth()->id())->get();
+    $this->nbLessons = count($this->lessons);
     $this->nbCourses = count($this->courses);
     return view('livewire.dashboard');
   }

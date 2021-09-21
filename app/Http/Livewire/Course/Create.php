@@ -31,6 +31,7 @@ class Create extends Component
   public function submit()
   {
     $this->course->professor_id = $this->course->professor_id["value"];
+    $this->course->user_id = auth()->id();
     $this->validate();
 
     $this->course->save();

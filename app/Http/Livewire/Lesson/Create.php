@@ -35,6 +35,7 @@ class Create extends Component
       'name' => $this->name,
       'content' => $this->content,
       'course_id' =>  $this->courseId,
+      'user_id' =>  auth()->id(),
     ]);
 
     return redirect()->route('lesson.view', ['courseId' => $this->courseId]);

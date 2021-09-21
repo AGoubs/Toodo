@@ -11,7 +11,7 @@ class Calendar extends Component
 
   public function render()
   {
-    $events = Event::select('id', 'title', 'start')->get();
+    $events = Event::select('id', 'title', 'start')->where('user_id', auth()->id())->get();
 
     $this->events = json_encode($events);
 
@@ -20,7 +20,7 @@ class Calendar extends Component
 
   public function getevent()
   {
-    $events = Event::select('id', 'title', 'start')->get();
+    $events = Event::select('id', 'title', 'start')->where('user_id', auth()->id())->get();
 
     return  json_encode($events);
   }
@@ -29,6 +29,8 @@ class Calendar extends Component
   {
     $input['title'] = $event['title'];
     $input['start'] = $event['start'];
+    $input['user_id'] = auth()->id();
+    // dd($input);
     $newEvent = Event::create($input);
     return $newEvent->id;
   }
