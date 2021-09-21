@@ -7,14 +7,17 @@
       <div class="row gx-4">
         <div class="col-auto">
           <div class="avatar avatar-xl position-relative">
-            @livewire('photo.professor', ['professorId' => $professor->id])
-
+            @if (isset($professor->id))
+              @livewire('photo.professor', ['professorId' => $professor->id])
+            @endif
           </div>
         </div>
         <div class="col-auto my-auto">
           <div class="h-100">
             <h5 class="mb-1">
-              {{ $professor->firstname }} {{ $professor->lastname }}
+              @if (isset($professor->id))
+                {{ $professor->firstname }} {{ $professor->lastname }}
+              @endif
             </h5>
             <p class="mb-0 font-weight-bold text-sm">
               {{ $course->name }}

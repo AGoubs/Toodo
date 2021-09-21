@@ -1,5 +1,5 @@
 <div>
-  <div class="container-fluid my-3 py-3 d-flex flex-column">
+  <div class="container-fluid my-3 py-3">
     <div class="row mb-5 justify-content-center align-items-center">
       <div class="col-lg-9 col-md-12">
         <!-- Card Profile -->

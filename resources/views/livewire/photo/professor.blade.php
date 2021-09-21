@@ -1,11 +1,11 @@
 <div>
-  
-    @if (isset($professor))
+
+  @if (isset($professor))
     @if (isset($size))
       @if (isset($professor->photo))
         <a href="{{ route('professor.read', ['professorId' => $professor->id]) }}" class="avatar avatar-{{ $size }} rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ $professor->firstname }} {{ $professor->lastname }}">
-      @else 
-      <a href="" class="avatar avatar-{{ $size }} rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ $professor->firstname }} {{ $professor->lastname }}">
+        @else
+          <a href="" class="avatar avatar-{{ $size }} rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ $professor->firstname }} {{ $professor->lastname }}">
       @endif
     @endif
 
@@ -18,6 +18,6 @@
     @if (isset($size))
       </a>
     @endif
-    @endif
+  @endif
 
 </div>
