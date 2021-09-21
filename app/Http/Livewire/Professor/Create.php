@@ -15,6 +15,7 @@ class Create extends Component
   protected $rules = [
     'professor.firstname' => 'required|string',
     'professor.lastname' => 'required|string',
+    'professor.user_id' => 'required|integer',
     'photo' => ''
   ];
 
@@ -30,6 +31,7 @@ class Create extends Component
 
   public function submit()
   {
+    $this->professor->user_id = auth()->id();
     $this->validate();
 
 
@@ -38,7 +40,7 @@ class Create extends Component
       $this->photo->storeAs('photos', $name);
       $this->professor->photo = $name;
     }
-   
+
 
     $this->professor->save();
     return redirect()->route('dashboard');

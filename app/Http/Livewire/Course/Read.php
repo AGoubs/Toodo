@@ -22,7 +22,7 @@ class Read extends Component
 
   public function render()
   {
-    $this->professors = Professor::all();
+    $this->professors = Professor::where('user_id', auth()->id())->get();
     return view('livewire.course.read');
   }
 
@@ -30,7 +30,6 @@ class Read extends Component
   {
     $this->course = Course::find($this->courseId);
     $this->courseProfessor = Professor::find($this->course->professor_id);
-
   }
 
   public function update()

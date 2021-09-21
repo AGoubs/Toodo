@@ -18,9 +18,9 @@ class Dashboard extends Component
 
   public function render()
   {
-    $this->courses = Course::all();
-    $this->professors = Professor::all();
-    $this->nbProfessors = Professor::count();
+    $this->courses = Course::where('user_id', auth()->id())->get();
+    $this->professors = Professor::where('user_id', auth()->id())->get();
+    $this->nbProfessors = count($this->professors);
     $this->lessons = Lesson::take(5)->orderBy('created_at', 'desc')->get();
     $this->nbLessons = Lesson::count();
     $this->nbCourses = count($this->courses);

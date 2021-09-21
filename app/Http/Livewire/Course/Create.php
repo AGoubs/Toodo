@@ -13,12 +13,13 @@ class Create extends Component
 
   protected $rules = [
     'course.name' => 'required|string',
-    'course.professor_id' => 'required'
+    'course.professor_id' => 'required|integer',
+    'course.user_id' => 'required|integer',
   ];
 
   public function render()
   {
-    $this->professors = Professor::all();
+    $this->professors = Professor::where('user_id', auth()->id())->get();
     return view('livewire.course.create');
   }
 
