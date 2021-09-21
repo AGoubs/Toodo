@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\course;
 use App\Models\Professor;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CourseFactory extends Factory
@@ -25,6 +26,7 @@ class CourseFactory extends Factory
     return [
       'name' => $this->faker->jobTitle(),
       'professor_id' => Professor::all()->random()->id,
+      'user_id' => User::all()->random()->id,
     ];
   }
 }

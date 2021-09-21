@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Course;
 use App\Models\professor;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProfessorFactory extends Factory
@@ -26,6 +27,7 @@ class ProfessorFactory extends Factory
       'firstname' => $this->faker->firstName(),
       'lastname' => $this->faker->lastName(),
       'photo' => $this->faker->url(),
+      'user_id' => User::all()->random()->id,
     ];
   }
 }
