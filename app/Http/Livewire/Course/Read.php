@@ -34,7 +34,8 @@ class Read extends Component
 
   public function update()
   {
-    $this->course->professor_id = $this->course->professor_id["value"];
+    if (isset($this->course->professor_id["value"]))
+      $this->course->professor_id = $this->course->professor_id["value"];
     $this->validate();
     $this->course->save();
     return redirect()->route('dashboard');
