@@ -16,72 +16,74 @@
           <div class="h-100">
             <h5 class="mb-1">
               @if (isset($professor->id))
-                {{ $professor->firstname }} {{ $professor->lastname }}
+                <a href="{{ route('professor.read', ['professorId' => $professor->id]) }}">
+                  {{ $professor->firstname }} {{ $professor->lastname }}</a>
               @endif
             </h5>
             <p class="mb-0 font-weight-bold text-sm">
-              {{ $course->name }}
+              <a href="{{ route('course.read', ['courseId' => $course->id]) }}">
+                {{ $course->name }}</a>
+
             </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container-fluid py-4">
-    <div class="card">
-      <!-- Card header -->
-      <div class="card-header" style="padding-bottom: 0 !important">
-        <div class="d-flex flex-row justify-content-between">
-          <div>
-            <h5 class="mb-0">Liste des leçons</h5>
+    <div class="container-fluid py-4">
+      <div class="card">
+        <!-- Card header -->
+        <div class="card-header" style="padding-bottom: 0 !important">
+          <div class="d-flex flex-row justify-content-between">
+            <div>
+              <h5 class="mb-0">Liste des leçons</h5>
+            </div>
+            <a href="{{ route('lesson.create', ['courseId' => $course->id]) }}" class="btn bg-gradient-dark btn-sm mb-0" type="button">+&nbsp;
+              Ajouter</a>
           </div>
-          <a href="{{ route('lesson.create', ['courseId' => $course->id]) }}" class="btn bg-gradient-dark btn-sm mb-0" type="button">+&nbsp;
-            Ajouter</a>
+          <p class="text-sm mb-0">
+            {{ $course->name }}
+          </p>
         </div>
-        <p class="text-sm mb-0">
-          {{ $course->name }}
-        </p>
-      </div>
-      <div class="table-responsive">
-        <table class="table table-flush" id="datatable-search">
-          <thead class="thead-light">
-            <tr>
-              <th>Nom</th>
-              <th>Nom</th>
-              <th>Date Création</th>
-              <th>Dernière Modification</th>
-            </tr>
-          </thead>
-          <tfoot>
-            <tr>
-              <th>Nom</th>
-              <th>Date Création</th>
-              <th>Date Création</th>
-              <th>Dernière Modification</th>
-            </tr>
-          </tfoot>
-          <tbody>
-            @foreach ($lessons as $lesson)
-              <tr wire:click="lessonRead({{ $lesson->id }})" class="clickable_row">
-                <td class=" text-sm font-weight-normal text-justify">{{ $lesson->name }}</td>
-                <td class="text-sm font-weight-normal text-justify">{{ $lesson->content }}</td>
-                <td class="text-sm font-weight-normal">{{ date('d/m/Y', strtotime($lesson->created_at)) }}</td>
-                <td class="text-sm font-weight-normal">{{ date('d/m/Y', strtotime($lesson->updated_at)) }}</td>
+        <div class="table-responsive">
+          <table class="table table-flush" id="datatable-search">
+            <thead class="thead-light">
+              <tr>
+                <th>Nom</th>
+                <th>Nom</th>
+                <th>Date Création</th>
+                <th>Dernière Modification</th>
               </tr>
-            @endforeach
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Nom</th>
+                <th>Date Création</th>
+                <th>Date Création</th>
+                <th>Dernière Modification</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              @foreach ($lessons as $lesson)
+                <tr wire:click="lessonRead({{ $lesson->id }})" class="clickable_row">
+                  <td class=" text-sm font-weight-normal text-justify">{{ $lesson->name }}</td>
+                  <td class="text-sm font-weight-normal text-justify">{{ $lesson->content }}</td>
+                  <td class="text-sm font-weight-normal">{{ date('d/m/Y', strtotime($lesson->created_at)) }}</td>
+                  <td class="text-sm font-weight-normal">{{ date('d/m/Y', strtotime($lesson->updated_at)) }}</td>
+                </tr>
+              @endforeach
 
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script src="../../assets/js/plugins/datatables.js"></script>
-<script src="https://cdn.datatables.net/plug-ins/1.11.1/i18n/fr_fr.json"></script>
-<script>
-  const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
-    searchable: true,
-    fixedHeight: true,
-    perPage: 25,
-  });
-</script>
+  <script src="../../assets/js/plugins/datatables.js"></script>
+  <script src="https://cdn.datatables.net/plug-ins/1.11.1/i18n/fr_fr.json"></script>
+  <script>
+    const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
+      searchable: true,
+      fixedHeight: true,
+      perPage: 25,
+    });
+  </script>

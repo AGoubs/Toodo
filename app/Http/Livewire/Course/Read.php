@@ -29,7 +29,8 @@ class Read extends Component
   public function mount()
   {
     $this->course = Course::find($this->courseId);
-    $this->courseProfessor = Professor::find($this->course->professor_id);
+    if (isset($this->course->professor_id))
+      $this->courseProfessor = Professor::find($this->course->professor_id);
   }
 
   public function update()

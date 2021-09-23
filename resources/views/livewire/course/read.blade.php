@@ -16,20 +16,20 @@
             <div class="row my-4">
               <div wire:ignore class="col-8">
                 <label class="form-label">Professeur</label>
-                <select wire:model="course.professor_id" class="form-control" aria-label="Professor select"
-                  id="choices-professor">
-                  <option value="{{$courseProfessor->id}}">{{$courseProfessor->firstname}} {{$courseProfessor->lastname}}</option>
-                  @foreach ($professors as $professor)
-                  @if ($professor->id != $courseProfessor->id )
-                    <option value="{{$professor->id}}">{{$professor->firstname}} {{$professor->lastname}}</option>
+                <select wire:model="course.professor_id" class="form-control" aria-label="Professor select" id="choices-professor">
+                  @if (isset($courseProfessor->id))
+                    <option value="{{ $courseProfessor->id }}">{{ $courseProfessor->firstname }} {{ $courseProfessor->lastname }}</option>
                   @endif
+                  @foreach ($professors as $professor)
+                    @if (isset($courseProfessor->id) && $professor->id != $courseProfessor->id)
+                      <option value="{{ $professor->id }}">{{ $professor->firstname }} {{ $professor->lastname }}</option>
+                    @endif
                   @endforeach
                 </select>
               </div>
               <div class="col-4">
                 <label class="form-label">&nbsp;</label><br>
-                <a href="{{ route('professor.create') }}" class="btn bg-gradient-dark btn-md"
-                type="button">+</a>
+                <a href="{{ route('professor.create') }}" class="btn bg-gradient-dark btn-md" type="button">+</a>
               </div>
 
             </div>
@@ -50,7 +50,7 @@
 
 <script>
   if (document.getElementById('choices-professor')) {
-        var professor = document.getElementById('choices-professor');
-        const example = new Choices(professor);
-    }
+    var professor = document.getElementById('choices-professor');
+    const example = new Choices(professor);
+  }
 </script>
