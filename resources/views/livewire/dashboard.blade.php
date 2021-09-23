@@ -56,7 +56,7 @@
                       </td>
                       <td class="text-sm font-weight-bold text-center">
                         <span class="my-2 text-sm"><a href="{{ route('course.read', ['courseId' => $course->id]) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Editer">
-                            <i class="fas fa-user-edit text-secondary" aria-hidden="true"></i>
+                            <i class="fas fa-edit text-secondary" aria-hidden="true"></i>
                           </a>
                           <span>
                             <i onclick="confirm('Voulez-vous supprimer ce cours ?') || event.stopImmediatePropagation()" wire:click="deleteCourse({{ $course->id }})" class="cursor-pointer fas fa-trash text-secondary" data-bs-toggle="tooltip" data-bs-original-title="Supprimer" aria-hidden="true"></i>

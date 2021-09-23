@@ -1,7 +1,7 @@
 <div>
   <div class="container-fluid py-1">
     <div class="row">
-      <div class="col-6 mx-auto">
+      <div class="col-12 col-lg-10 mx-auto">
         <div class="card card-body mt-4">
           <form wire:submit.prevent="submit">
             <h6 class="mb-0">Nouvelle leçon</h6>
