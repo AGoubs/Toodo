@@ -17,7 +17,7 @@ class Read extends Component
 
   protected $rules = [
     'course.name' => 'required|string',
-    'course.professor_id' => 'required|integer'
+    'course.professor_id' => 'integer'
   ];
 
   public function render()
@@ -35,8 +35,13 @@ class Read extends Component
 
   public function update()
   {
-    if (isset($this->course->professor_id["value"]))
-      $this->course->professor_id = $this->course->professor_id["value"];
+    if (isset($this->course->professor_id["value"])) {
+      if ($this->course->professor_id["value"] != "") {
+        $this->course->professor_id = $this->course->professor_id["value"];
+      } else {
+        $this->course->professor_id = null;
+      }
+    }
     $this->validate();
     $this->course->save();
     return redirect()->route('dashboard');

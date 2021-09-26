@@ -13,7 +13,7 @@ class Create extends Component
 
   protected $rules = [
     'course.name' => 'required|string',
-    'course.professor_id' => 'required|integer',
+    'course.professor_id' => '',
     'course.user_id' => 'required|integer',
   ];
 
@@ -30,7 +30,8 @@ class Create extends Component
 
   public function submit()
   {
-    $this->course->professor_id = $this->course->professor_id["value"];
+    if (isset($this->course->professor_id["value"]))
+      $this->course->professor_id = $this->course->professor_id["value"];
     $this->course->user_id = auth()->id();
     $this->validate();
 

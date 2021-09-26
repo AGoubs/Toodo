@@ -16,18 +16,16 @@
             <div class="row my-4">
               <div wire:ignore class="col-8">
                 <label class="form-label">Professeur</label>
-                <select wire:model="course.professor_id" class="form-control" aria-label="Professor select"
-                  id="choices-professor">
-                  <option value="">Professeur</option>
+                <select wire:model="course.professor_id" class="form-control" aria-label="Professor select" id="choices-professor">
+                  <option value="">Aucun</option>
                   @foreach ($professors as $professor)
-                    <option value="{{$professor->id}}">{{$professor->firstname}} {{$professor->lastname}}</option>
+                    <option value="{{ $professor->id }}">{{ $professor->firstname }} {{ $professor->lastname }}</option>
                   @endforeach
                 </select>
               </div>
               <div class="col-4">
                 <label class="form-label">&nbsp;</label><br>
-                <a href="{{ route('professor.create') }}" class="btn bg-gradient-dark btn-md"
-                type="button">+</a>
+                <a href="{{ route('professor.create') }}" class="btn bg-gradient-dark btn-md" type="button">+</a>
               </div>
 
             </div>
@@ -48,7 +46,7 @@
 
 <script>
   if (document.getElementById('choices-professor')) {
-        var professor = document.getElementById('choices-professor');
-        const example = new Choices(professor);
-    }
+    var professor = document.getElementById('choices-professor');
+    const example = new Choices(professor);
+  }
 </script>

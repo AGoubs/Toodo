@@ -19,9 +19,13 @@
                 <select wire:model="course.professor_id" class="form-control" aria-label="Professor select" id="choices-professor">
                   @if (isset($courseProfessor->id))
                     <option value="{{ $courseProfessor->id }}">{{ $courseProfessor->firstname }} {{ $courseProfessor->lastname }}</option>
+                    <option value="">Aucun</option>
+                  @else
+                    <option value="">Aucun</option>
                   @endif
                   @foreach ($professors as $professor)
-                    @if (isset($courseProfessor->id) && $professor->id != $courseProfessor->id)
+                    @if (isset($courseProfessor->id) && $professor->id == $courseProfessor->id)
+                    @else
                       <option value="{{ $professor->id }}">{{ $professor->firstname }} {{ $professor->lastname }}</option>
                     @endif
                   @endforeach
