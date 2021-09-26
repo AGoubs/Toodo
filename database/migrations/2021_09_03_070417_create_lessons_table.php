@@ -17,7 +17,7 @@ class CreateLessonsTable extends Migration
       $table->id();
       $table->string('name');
       $table->text('content');
-      $table->foreignId('course_id')->constrained();
+      $table->foreignId('course_id');
       $table->timestamps();
     });
   }
