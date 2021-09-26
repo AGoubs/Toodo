@@ -27552,3 +27552,9 @@ ul li.editMode input[type=text] {
   right: 100px;
   width: 1000px;
 }
+
+.cut-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
