@@ -27559,3 +27559,7 @@ ul li.editMode input[type=text] {
   overflow: hidden;
   white-space: nowrap;
 }
+
+.min-width-column {
+  width: 80% !important;
+}

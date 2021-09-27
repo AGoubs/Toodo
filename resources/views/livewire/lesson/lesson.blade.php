@@ -48,7 +48,7 @@
           <table class="table table-flush" id="datatable-search">
             <thead class="thead-light">
               <tr>
-                <th>Nom</th>
+                <th class="min-width-column">Nom</th>
                 <th>Date Création</th>
                 <th>Dernière Modification</th>
               </tr>

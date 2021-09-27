@@ -1,4 +1,7 @@
 <main>
+  @if (session()->has('success'))
+    @livewire('components.alert', ['message' => session()->get('success')])
+  @endif
   <div class="container-fluid py-4">
     <div class="row">
       <div class="col-lg-7 col-md-6 mb-md-0 mb-4">

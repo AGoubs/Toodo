@@ -43,6 +43,8 @@ class Create extends Component
 
 
     $this->professor->save();
-    return redirect()->route('dashboard');
+
+    session()->flash('success', 'Professeur ajouté avec succès !');
+    return redirect()->to('dashboard');
   }
 }

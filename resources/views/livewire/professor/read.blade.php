@@ -2,9 +2,6 @@
   <div class="container-fluid my-3 py-3 d-flex flex-column">
     <div class="row mb-5 justify-content-center align-items-center">
       <div class="col-lg-9 col-md-12">
-        @if (session()->has('success'))
-          @livewire('components.alert', ['message' => 'Bonsoir le monde'])
-        @endif
         <!-- Card Profile -->
         <div class="card card-body" id="profile">
           <div class="row justify-content-center align-items-center">
