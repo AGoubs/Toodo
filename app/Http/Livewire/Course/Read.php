@@ -44,6 +44,7 @@ class Read extends Component
     }
     $this->validate();
     $this->course->save();
-    return redirect()->route('dashboard');
+    session()->flash('success', 'Cours modifié avec succès !');
+    return redirect()->to('dashboard');
   }
 }

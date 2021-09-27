@@ -37,6 +37,7 @@ class Create extends Component
 
     $this->course->save();
 
-    return redirect()->route('dashboard');
+    session()->flash('success', 'Cours ajouté avec succès !');
+    return redirect()->to('dashboard');
   }
 }

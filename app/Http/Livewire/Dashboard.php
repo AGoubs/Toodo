@@ -30,6 +30,7 @@ class Dashboard extends Component
   public function deleteCourse($id)
   {
     Course::find($id)->delete();
-    return redirect()->route('dashboard');
+    session()->flash('success', 'Cours supprimé avec succès !');
+    return redirect()->to('dashboard');
   }
 }
