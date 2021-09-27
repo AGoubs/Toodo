@@ -32,7 +32,9 @@
 </head>
 
 <body class="g-sidenav-show 1 bg-gray-100">
-
+  @if (session()->has('success'))
+    @livewire('components.alert', ['message' => session()->get('success')])
+  @endif
   {{ $slot }}
 
   <!--   Core JS Files   -->

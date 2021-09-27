@@ -1,5 +1,5 @@
    <div>
-     <div class="toast bg-success text-white" id="toast1" data-delay="100000" style="position: absolute; top: 1rem; right: 1.5rem; min-width:250px;" aria-live="assertive" aria-atomic="true">
+     <div class="toast bg-success text-white" id="toast" data-delay="5000" style="position: absolute; top: 1rem; right: 1.5rem; min-width:250px;z-index:1000" aria-live="assertive" aria-atomic="true">
        <div class="toast-body">
          <div class="d-flex mb-1">
            <div class="alert-icon me-1">
@@ -13,10 +13,10 @@
    </div>
    <script>
      $(document).ready(function() {
-       $('#toast1').toast('show');
+       $('#toast').toast('show');
 
-       $('#toast1').on('click', function() {
-         $('#toast1').toast('hide');
+       $('#toast').on('click', function() {
+         $('#toast').toast('hide');
        })
      });
    </script>

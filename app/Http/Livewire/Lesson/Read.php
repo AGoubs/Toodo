@@ -45,6 +45,7 @@ class Read extends Component
   public function delete($id)
   {
     Lesson::find($id)->delete();
+    session()->flash('success', 'Leçon supprimée avec succès !');
     return redirect()->route('lesson.view', ['courseId' => $this->courseId]);
   }
 }

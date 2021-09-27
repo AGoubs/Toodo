@@ -37,7 +37,7 @@ class Create extends Component
       'course_id' =>  $this->courseId,
       'user_id' =>  auth()->id(),
     ]);
-
+    session()->flash('success', 'Leçon créée avec succès !');
     return redirect()->route('lesson.view', ['courseId' => $this->courseId]);
   }
 }
