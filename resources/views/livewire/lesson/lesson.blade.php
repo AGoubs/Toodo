@@ -49,7 +49,6 @@
             <thead class="thead-light">
               <tr>
                 <th>Nom</th>
-                <th>Nom</th>
                 <th>Date Création</th>
                 <th>Dernière Modification</th>
               </tr>
@@ -58,20 +57,18 @@
               <tr>
                 <th>Nom</th>
                 <th>Date Création</th>
-                <th>Date Création</th>
                 <th>Dernière Modification</th>
               </tr>
             </tfoot>
             <tbody>
               @foreach ($lessons as $lesson)
-                <tr wire:click="lessonRead({{ $lesson->id }})" class="clickable_row">
+                <tr wire:key="{{ $lesson->id }}" wire:click="lessonRead({{ $lesson->id }})" class="clickable_row">
                   <td class=" text-sm font-weight-normal text-justify">{{ $lesson->name }}</td>
-                  <td class="text-sm font-weight-normal text-justify">{{ $lesson->content }}</td>
+                  <td class="text-sm font-weight-normal text-justify" style="display: none;"> {{ $lesson->content }} </td>
                   <td class="text-sm font-weight-normal">{{ date('d/m/Y', strtotime($lesson->created_at)) }}</td>
                   <td class="text-sm font-weight-normal">{{ date('d/m/Y', strtotime($lesson->updated_at)) }}</td>
                 </tr>
               @endforeach
-
             </tbody>
           </table>
         </div>

@@ -8,6 +8,7 @@ use App\Http\Livewire\Auth\SignUp;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\Billing;
+use App\Http\Livewire\Calendar;
 use App\Http\Livewire\Course\Create as CourseCreate;
 use App\Http\Livewire\Course\Read as CourseRead;
 use App\Http\Livewire\Profile;
@@ -47,6 +48,7 @@ Route::get('/reset-password/{id}', ResetPassword::class)->name('reset-password')
 
 Route::middleware('auth')->group(function () {
   Route::get('/dashboard', Dashboard::class)->name('dashboard');
+  Route::get('/calendar', Calendar::class)->name('calendar');
 
   Route::get('/lesson/view', Lesson::class)->name('lesson.view');
   Route::get('/lesson/create', Create::class)->name('lesson.create');

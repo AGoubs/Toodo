@@ -25,7 +25,7 @@
     var data = @this.events;
     console.log(@this.events);
     var calendar = new Calendar(calendarEl, {
-      height: 550,
+      height: @this.height,
       locale: 'fr',
       events: JSON.parse(data),
       eventDisplay: 'block',
