@@ -14,6 +14,8 @@ class Create extends Component
   public $name;
   public $content;
 
+  public $updated = "<i class='fas fa-check text-success'></i> A jour";
+
   public $courseId;
   protected $queryString = ['courseId'];
 
@@ -29,6 +31,11 @@ class Create extends Component
   {
   }
 
+  public function updateComponent()
+  {
+    $this->updated = "<i class='fas fa-times text-danger'></i> Pas à jour";
+  }
+
   public function submit()
   {
     Lesson::create([
@@ -37,7 +44,9 @@ class Create extends Component
       'course_id' =>  $this->courseId,
       'user_id' =>  auth()->id(),
     ]);
-    session()->flash('success', 'Leçon créée avec succès !');
-    return redirect()->route('lesson.view', ['courseId' => $this->courseId]);
+    $this->updated = "<i class='fas fa-check text-success'></i> A jour";
+
+    // session()->flash('success', 'Leçon créée avec succès !');
+    // return redirect()->route('lesson.view', ['courseId' => $this->courseId]);
   }
 }

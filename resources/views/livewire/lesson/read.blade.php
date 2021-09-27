@@ -14,9 +14,12 @@
             <p class="text-sm mb-0">Créer une nouvelle leçon</p>
             <hr class="horizontal dark my-3">
             <label for="lessonName" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="lessonName" wire:model.defer="name" required autofocus>
+            <input type="text" class="form-control" id="lessonName" wire:model.defer="name" required autofocus wire:keydown="updateComponent()">
             <label class="mt-4">Contenu</label>
-            <div id="editor" class="ql-container ql-snow">
+            <p class="form-text text-muted text-xs ms-1" x-data>
+              <span x-html="$wire.updated"></span>
+            </p>
+            <div id="editor" class="ql-container ql-snow" wire:ignore wire:keydown="updateComponent()">
               <div class="ql-editor" data-gramm="false" contenteditable="true">
               </div>
               <div class="ql-clipboard" contenteditable="true" tabindex="-1"></div>

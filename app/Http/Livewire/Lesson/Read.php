@@ -16,6 +16,8 @@ class Read extends Component
   public $name;
   public $content;
 
+  public $updated = "<i class='fas fa-check text-success'></i> A jour";
+
   public $courseId;
   public $lessonId;
   protected $queryString = ['courseId', 'lessonId'];
@@ -34,12 +36,17 @@ class Read extends Component
   {
   }
 
+  public function updateComponent()
+  {
+    $this->updated = "<i class='fas fa-times text-danger'></i> Pas à jour";
+  }
+
   public function update()
   {
     $this->lesson->name = $this->name;
     $this->lesson->content = $this->content;
     $this->lesson->save();
-    return redirect()->route('lesson.view', ['courseId' => $this->courseId]);
+    $this->updated = "<i class='fas fa-check text-success'></i> A jour";
   }
 
   public function delete($id)
