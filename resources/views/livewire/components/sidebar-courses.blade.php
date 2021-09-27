@@ -4,7 +4,7 @@
 <li class="nav-item pb-2">
   <a class="nav-link {{ Route::currentRouteName() == 'course.create' ? 'active' : '' }}" href="{{ route('course.create') }}">
     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-      <i style="font-size: 1rem;" class="fas fa-sm fa-file-medical ps-2 pe-2 text-center {{ in_array(
+      <i style="font-size: .95rem;" class="fas fa-sm fa-file-medical ps-2 pe-2 text-center {{ in_array(
     request()->route()->getName(),
     ['course.create'],
 )
@@ -17,7 +17,7 @@
 <li class="nav-item pb-2">
   <a class="nav-link collapsed {{ Route::currentRouteName() == 'lesson.view' ? 'active' : '' }}" data-bs-toggle="collapse" href="#courses" aria-controls="courses" role="button" aria-expanded="false">
     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-      <i style="font-size: .70rem;" class="fas fa-sm fa-users ps-2 pe-2 text-center
+      <i style="font-size: .80rem;" class="fas fa-sm fa-users ps-2 pe-2 text-center
                         {{ in_array(
     request()->route()->getName(),
     ['lesson.view'],

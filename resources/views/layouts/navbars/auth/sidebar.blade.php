@@ -37,7 +37,7 @@
       <li class="nav-item pb-2">
         <a class="nav-link {{ Route::currentRouteName() == 'calendar' ? 'active' : '' }}" href="{{ route('calendar') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i style="font-size: .75rem;" class="far fa-sm fa-calendar-alt ps-2 pe-2 text-center
+            <i style="font-size: 1rem;" class="far fa-sm fa-calendar-alt ps-2 pe-2 text-center
                         {{ in_array(
     request()->route()->getName(),
     ['calendar'],

@@ -3,14 +3,8 @@
     <div class="row mb-5 justify-content-center align-items-center">
       <div class="col-lg-9 col-md-12">
         @if (session()->has('success'))
-          <div class="alert position-absolute top-0 border-0 text-white w-50 end-0 start-0 mt-2 mx-auto py-2 alert-success" style=" opacity: 1 !important; transition: all 0.35s ease 0s;" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)">
-            <div class="d-flex mb-1">
-              <div class="alert-icon me-1"><i class="ni ni-bell-55 mt-1"></i></div><span class="alert-text"><strong>Succès</strong></span>
-            </div>
-            <span class="text-sm">{{ session()->get('success') }}</span>
-          </div>
+          @livewire('components.alert', ['message' => 'Bonsoir le monde'])
         @endif
-
         <!-- Card Profile -->
         <div class="card card-body" id="profile">
           <div class="row justify-content-center align-items-center">

@@ -23,7 +23,6 @@
     var calendarEl = document.getElementById('calendar');
     var checkbox = document.getElementById('drop-remove');
     var data = @this.events;
-    console.log(@this.events);
     var calendar = new Calendar(calendarEl, {
       height: @this.height,
       locale: 'fr',
